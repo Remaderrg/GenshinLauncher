@@ -21,6 +21,7 @@
     <None Remove="Views\2b67ee46342696d2cce2ba94554f61a8_4473402438936004615 %281%29.png" />
     <None Remove="Views\battle.png" />
     <None Remove="Views\calk.png" />
+    <None Remove="Views\code.png" />
     <None Remove="Views\dayly.png" />
     <None Remove="Views\fon.png" />
     <None Remove="Views\Genshin Impact 2021.07.31 - 16.19.10.03.mp4" />
@@ -38,6 +39,7 @@
 
   <ItemGroup>
     <PackageReference Include="CliWrap" Version="3.3.2" />
+    <PackageReference Include="Microsoft.UI.Xaml" Version="2.7.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" />
     <PackageReference Include="Stylet" Version="1.3.6" />
@@ -66,6 +68,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Views\code.png" />
     <Resource Include="Views\fon.png" />
     <Resource Include="Views\battle.png" />
     <Resource Include="Views\calk.png" />

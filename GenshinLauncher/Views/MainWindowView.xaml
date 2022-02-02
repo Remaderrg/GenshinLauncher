@@ -19,7 +19,7 @@
     ui:ThemeManager.RequestedTheme="Dark"
     ui:TitleBar.ExtendViewIntoTitleBar="True">
     <Window.Background>
-        <ImageBrush ImageSource="/Views/9e8a7d7e32dfed6abe33ec358113ff32_4819939907032411224.png"/>
+        <ImageBrush ImageSource="https://github.com/Remaderrg/GenshinLauncher/blob/main/GenshinLauncher/Views/fon.png?raw=true"/>
     </Window.Background>
 
 
@@ -89,7 +89,7 @@
             Margin="15,10,0,19">
 
             <GroupBox Header="Path" 
-                      Width="350" HorizontalAlignment="Left" Margin="0,180,0,0" Foreground="Black"  >
+                      Width="350" HorizontalAlignment="Left" Foreground="Black"  >
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -110,6 +110,8 @@
             HorizontalAlignment="Right" 
             VerticalAlignment="Bottom"
             Margin="0,10,55,35">
+
+
 
             <Button Command="{s:Action LaunchGame}"
                     Content="Settings"
@@ -210,8 +212,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/mimo.png"
@@ -251,8 +252,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/map.png"
@@ -292,8 +292,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/dayly.png"
@@ -333,8 +332,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/battle.png"
@@ -374,8 +372,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/calk.png"
@@ -415,11 +412,50 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/primo.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://genshin.mihoyo.com/en/gift"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/code.png"
                             Stretch="Fill"/>
                     </ui:HyperlinkButton.Background>
 
@@ -456,8 +492,7 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.9">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/thanks.png"
@@ -497,12 +532,12 @@
                     Height="45" 
                     Width="45" 
                     HorizontalAlignment="Center" 
-                    Margin="10" 
-                    Opacity="0.7">
+                    Margin="10">
                     <ui:HyperlinkButton.Background>
                         <ImageBrush
                             ImageSource="/Views/git.png"
-                            Stretch="Fill"/>
+                            Stretch="Fill" 
+                            Opacity="0.9"/>
                     </ui:HyperlinkButton.Background>
 
                     <ui:HyperlinkButton.Style>
@@ -532,6 +567,8 @@
                     </ui:HyperlinkButton.Template>
 
                 </ui:HyperlinkButton>
+                
+                
 
             </StackPanel>
         </StackPanel>

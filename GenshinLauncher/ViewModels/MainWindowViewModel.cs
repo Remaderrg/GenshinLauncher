@@ -8,12 +8,17 @@ using GenshinLauncher.Models;
 using Microsoft.Win32;
 using ModernWpf.Controls;
 using Stylet;
+using System.Windows;
+using System.Windows.Input;
 
 namespace GenshinLauncher.ViewModels
 {
+
+
+
     public class MainWindowViewModel : Screen
+
     {
-        public const string Title = "Genshin Impact Launcher";
 
         public MainWindowViewModel()
         {

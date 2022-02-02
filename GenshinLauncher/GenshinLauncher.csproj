@@ -18,6 +18,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\2b67ee46342696d2cce2ba94554f61a8_4473402438936004615 %281%29.png" />
+    <None Remove="Views\battle.png" />
+    <None Remove="Views\calk.png" />
+    <None Remove="Views\dayly.png" />
+    <None Remove="Views\git.png" />
+    <None Remove="Views\map.png" />
+    <None Remove="Views\mimo.png" />
+    <None Remove="Views\new.png" />
+    <None Remove="Views\news.png" />
+    <None Remove="Views\news_click.png" />
+    <None Remove="Views\primo.png" />
+    <None Remove="Views\thanks.png" />
+    <None Remove="Views\topup.png" />
+    <None Remove="Views\vk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CliWrap" Version="3.3.2" />
     <PackageReference Include="ModernWpfUI" Version="0.9.4" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.3.3" />
@@ -44,5 +61,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Config.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\battle.png" />
+    <Resource Include="Views\calk.png" />
+    <Resource Include="Views\dayly.png" />
+    <Resource Include="Views\git.png" />
+    <Resource Include="Views\map.png" />
+    <Resource Include="Views\mimo.png" />
+    <Resource Include="Views\primo.png" />
+    <Resource Include="Views\thanks.png" />
   </ItemGroup>
 </Project>

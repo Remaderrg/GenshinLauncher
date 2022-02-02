@@ -11,88 +11,532 @@
     xmlns:viewModels="clr-namespace:GenshinLauncher.ViewModels"
     xmlns:genshinLauncher="clr-namespace:GenshinLauncher"
     xmlns:models="clr-namespace:GenshinLauncher.Models"
-    d:DataContext="{d:DesignInstance Type=viewModels:MainWindowViewModel}"
 
-    Title="{x:Static viewModels:MainWindowViewModel.Title}"
-    Width="500" Height="600"
-    MinWidth="500" MinHeight="600"
+    Width="1285" Height="730"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    Background="AntiqueWhite"
     ui:WindowHelper.UseModernWindowStyle="True"
+    ui:ThemeManager.RequestedTheme="Dark"
     ui:TitleBar.ExtendViewIntoTitleBar="True">
 
-    <Window.Resources>
-        <genshinLauncher:Config x:Key="Config" />
-        <Style TargetType="ui:NumberBox">
-            <Setter Property="SpinButtonPlacementMode" Value="Compact" />
-            <Setter Property="Minimum" Value="0" />
-        </Style>
-    </Window.Resources>
 
-    <ScrollViewer Margin="30">
-        <ui:SimpleStackPanel>
-            <TextBlock
-                Style="{StaticResource TitleTextBlockStyle}"
-                Text="{x:Static viewModels:MainWindowViewModel.Title}" />
 
-            <ui:SimpleStackPanel Orientation="Horizontal">
-                <ui:ToggleSwitch
-                    Header="Fullscreen"
-                    IsOn="{Binding Default.Fullscreen, Source={StaticResource Config}}" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-                <ui:ToggleSwitch
-                    Header="Borderless"
-                    IsOn="{Binding Default.Borderless, Source={StaticResource Config}}" />
-            </ui:SimpleStackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="70"/>
+        </Grid.ColumnDefinitions>
 
-            <GroupBox Header="Quality">
-                <ComboBox ItemsSource="{Binding Quality.Qualities}"
-                          SelectedItem="{Binding Quality.SelectedQuality}" />
-            </GroupBox>
+        <Grid Background="#141414"
+              Grid.ColumnSpan="4">
 
-            <ui:SimpleStackPanel Orientation="Horizontal">
-                <GroupBox Header="Resolution">
-                    <ui:SimpleStackPanel Orientation="Horizontal">
-                        <ui:NumberBox Header="Width" Value="{Binding Resolution.Width}" />
-                        <ui:NumberBox Header="Height" Value="{Binding Resolution.Height}" />
-                    </ui:SimpleStackPanel>
-                </GroupBox>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-                <GroupBox Header="Preset">
-                    <ComboBox
-                        Margin="0,25,0,0"
-                        ItemsSource="{x:Static models:Resolution.Presets}"
-                        SelectedItem="{Binding Resolution}" />
-                </GroupBox>
-            </ui:SimpleStackPanel>
-            <GroupBox Header="Path">
+
+            <TextBlock Text="GI Launcher"
+                       Foreground="White"
+                       Grid.Column="0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Montserrat-Variable"
+                       FontSize="17"/>
+
+            <TextBlock Text="2.5.0"
+                       Foreground="#434343"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       FontFamily="Fonts/#Montserrat-Variable" 
+                       FontSize="17"/>
+
+
+
+
+        </Grid>
+
+
+        <StackPanel 
+            Grid.Column="0" 
+            Grid.Row="1" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Bottom"
+            Margin="15,10,0,19">
+
+            <GroupBox Header="Path" 
+                      Width="350" HorizontalAlignment="Left" Margin="0,180,0,0" Foreground="Black"  >
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition/>
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
-                    <TextBox Grid.Column="0" TextWrapping="WrapWithOverflow" 
+                    <TextBox Grid.Column="0" Margin="0,-15,0,1" TextWrapping="WrapWithOverflow " 
                              PreviewMouseDown="{s:Action SetLocation}" IsReadOnly="True"
-                             Text="{Binding Location, Mode=OneWay}"  />
-
-                    <Button Grid.Column="1" Margin="5,0,0,0"
-                            Command="{s:Action SetLocation}">
-                        <ui:FontIcon Glyph="&#xE8E5;" />
-                    </Button>
+                             Text="{Binding Location, Mode=OneWay}" Height="45" Grid.ColumnSpan="2"  />
                 </Grid>
             </GroupBox>
+        </StackPanel>
 
-            <ui:SimpleStackPanel
-                Orientation="Horizontal"
-                HorizontalAlignment="Right">
-                <Button Command="{s:Action LaunchGame}"
-                        Content="Launch Game" />
+        <StackPanel 
+            Grid.Column="2" 
+            Grid.Row="1" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Bottom"
+            Margin="0,10,55,35">
 
-                <Button Command="{s:Action LaunchSelector}"
-                        Content="Controller Settings" />
+            <Button Command="{s:Action LaunchGame}"
+                    Content="Settings"
+                    Width="150" 
+                    Height="25" 
+                    Margin="10,10,-80,10"
+                    FontSize="20"
+                    HorizontalAlignment="Center"
+                    FontFamily="Arial" Foreground="#CC000000"   >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#66A09F9C"/>
+                        <GradientStop Color="#6673726F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
 
-                <Button Command="{s:Action RequestClose}"
-                        Content="Exit" />
-            </ui:SimpleStackPanel>
-        </ui:SimpleStackPanel>
-    </ScrollViewer>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="25"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Command="{s:Action LaunchGame}"
+                    Content="Launch Game"
+                    Width="240" 
+                    Height="65" 
+                    FontSize="26"
+                    HorizontalAlignment="Center"
+                    FontFamily="Arial"   >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFCF0D"/>
+                        <GradientStop Color="#FFFFC004" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DimGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="240" Height="65"
+                                    CornerRadius="5"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3" Grid.Row="1" Background="#33000000">
+
+
+
+            <StackPanel 
+                Orientation="Vertical"
+                Grid.Column="2">
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://www.hoyolab.com/home"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/mimo.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/map.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://webstatic-sea.mihoyo.com/ys/event/signin-sea-v3/index.html?act_id=e202102251931481"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/dayly.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://clck.ru/aqapv"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/battle.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://clck.ru/aqaup"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/calk.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://webstatic-sea.mihoyo.com/payment/genshin/index.html#/"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/primo.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://www.donationalerts.com/r/remaderrg"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.9">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/thanks.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+                <ui:HyperlinkButton   
+                    NavigateUri="https://github.com/Remaderrg/GenshinLauncher"
+                    Height="45" 
+                    Width="45" 
+                    HorizontalAlignment="Center" 
+                    Margin="10" 
+                    Opacity="0.7">
+                    <ui:HyperlinkButton.Background>
+                        <ImageBrush
+                            ImageSource="/Views/git.png"
+                            Stretch="Fill"/>
+                    </ui:HyperlinkButton.Background>
+
+                    <ui:HyperlinkButton.Style>
+                        <Style TargetType="ui:HyperlinkButton">
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="DimGray"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                        </Style>
+                    </ui:HyperlinkButton.Style>
+
+                    <ui:HyperlinkButton.Template>
+                        <ControlTemplate TargetType="ui:HyperlinkButton">
+                            <Border Width="45" Height="45"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </ui:HyperlinkButton.Template>
+
+                </ui:HyperlinkButton>
+
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+    </Grid>
+
+
+
 </Window>

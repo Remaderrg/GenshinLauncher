@@ -15,14 +15,21 @@
     Width="1285" Height="730"
     ResizeMode="NoResize"
     WindowStyle="None"
-    Background="AntiqueWhite"
     ui:WindowHelper.UseModernWindowStyle="True"
     ui:ThemeManager.RequestedTheme="Dark"
     ui:TitleBar.ExtendViewIntoTitleBar="True">
+    <Window.Background>
+        <ImageBrush ImageSource="/Views/9e8a7d7e32dfed6abe33ec358113ff32_4819939907032411224.png"/>
+    </Window.Background>
+
+
+
 
 
 
     <Grid>
+
+
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
             <RowDefinition/>
@@ -70,6 +77,9 @@
                        HorizontalAlignment="Left"
                        FontFamily="Fonts/#Montserrat-Variable" 
                        FontSize="17"/>
+
+
+
 
 
 

@@ -19,10 +19,10 @@
 
   <ItemGroup>
     <None Remove="Views\2b67ee46342696d2cce2ba94554f61a8_4473402438936004615 %281%29.png" />
-    <None Remove="Views\9e8a7d7e32dfed6abe33ec358113ff32_4819939907032411224.png" />
     <None Remove="Views\battle.png" />
     <None Remove="Views\calk.png" />
     <None Remove="Views\dayly.png" />
+    <None Remove="Views\fon.png" />
     <None Remove="Views\Genshin Impact 2021.07.31 - 16.19.10.03.mp4" />
     <None Remove="Views\git.png" />
     <None Remove="Views\map.png" />
@@ -66,7 +66,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Views\9e8a7d7e32dfed6abe33ec358113ff32_4819939907032411224.png" />
+    <Resource Include="Views\fon.png" />
     <Resource Include="Views\battle.png" />
     <Resource Include="Views\calk.png" />
     <Resource Include="Views\dayly.png" />

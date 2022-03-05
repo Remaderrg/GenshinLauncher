@@ -95,6 +95,7 @@ namespace GenshinLauncher.ViewModels
             if (!(success && set)) await LocationMissing();
         }
 
+
         private Resolution GetLastResolution()
         {
             var config = Registry.CurrentUser

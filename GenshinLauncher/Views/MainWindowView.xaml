@@ -22,7 +22,13 @@
         <ImageBrush ImageSource="https://github.com/Remaderrg/GenshinLauncher/blob/main/GenshinLauncher/Views/fon.png?raw=true"/>
     </Window.Background>
 
-
+    <Window.Resources>
+        <genshinLauncher:Config x:Key="Config" />
+        <Style TargetType="ui:NumberBox">
+            <Setter Property="Minimum" Value="256" />
+            <Setter Property="Maximum" Value="7680" />
+        </Style>
+    </Window.Resources>
 
 
 
@@ -32,7 +38,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="20"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -237,14 +243,42 @@
             VerticalAlignment="Center"
             Grid.Column="0"
             Grid.Row="1">
-            <MenuItem Header="Line">
-                <MenuItem Header="New">
-                    
-                </MenuItem>
+            <MenuItem 
+                Header="Settings" Background="#33000000">
+                <ui:ToggleSwitch
+                    Header="Fullscreen"
+                    IsOn="{Binding Default.Fullscreen, Source={StaticResource Config}}"/>
+                <ui:ToggleSwitch
+                    Header="Borderless"
+                    IsOn="{Binding Default.Borderless, Source={StaticResource Config}}"/>
+                <GroupBox Header="Quality"
+                          Margin="0">
+                    <ComboBox 
+                        ItemsSource="{Binding Quality.Qualities}"
+                        SelectedItem="{Binding Quality.SelectedQuality}" />
+                </GroupBox>
+            </MenuItem>
+            <MenuItem 
+                Header="Resolution" Background="#33000000">
+                <ui:SimpleStackPanel>
+                    <ui:NumberBox
+                        Header="Width" 
+                        Value="{Binding Resolution.Width}">
+                    </ui:NumberBox>
+                    <ui:NumberBox
+                        Header="Height" 
+                        Value="{Binding Resolution.Height}">
+                    </ui:NumberBox>
+                </ui:SimpleStackPanel>
+                <ComboBox
+                    Margin="0"
+                    ItemsSource="{x:Static models:Resolution.Presets}"
+                    SelectedItem="{Binding Resolution}"/>
 
             </MenuItem>
-            
+
         </Menu>
+
 
 
 

@@ -24,6 +24,7 @@
     <None Remove="Views\new.png" />
     <None Remove="Views\news.png" />
     <None Remove="Views\news_click.png" />
+    <None Remove="Views\on.png" />
     <None Remove="Views\topup.png" />
     <None Remove="Views\vk.png" />
   </ItemGroup>
@@ -68,5 +69,6 @@
 
   <ItemGroup>
     <Resource Include="Views\fon.png" />
+    <Resource Include="Views\on.png" />
   </ItemGroup>
 </Project>

@@ -61,7 +61,6 @@ namespace GenshinLauncher.ViewModels
 
                 PrimaryButtonText   = "Find Manually...",
                 SecondaryButtonText = "Ignore",
-                CloseButtonText     = "Exit"
             };
 
             var result = await dialog.ShowAsync();

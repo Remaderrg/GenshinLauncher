@@ -6,28 +6,17 @@
     <UseWPF>true</UseWPF>
     <LangVersion>latest</LangVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Authors>sabihoshi</Authors>
+    <Authors>Remader</Authors>
     <Copyright />
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sabihoshi/GenshinLauncher</RepositoryUrl>
-    <Description>A Genshin Impact launcher with more options in Modern Fluent UI.</Description>
+    <RepositoryUrl>https://github.com/remaderrg/GenshinLauncher</RepositoryUrl>
+    <Description>Genshin Impact launcher with more options</Description>
     <ApplicationIcon>GenshinImpactIcon.ico</ApplicationIcon>
-    <Version>1.3.0</Version>
+    <Version>2.5.0</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Views\2b67ee46342696d2cce2ba94554f61a8_4473402438936004615 %281%29.png" />
-    <None Remove="Views\fon.png" />
-    <None Remove="Views\Genshin Impact 2021.07.31 - 16.19.10.03.mp4" />
-    <None Remove="Views\new.png" />
-    <None Remove="Views\news.png" />
-    <None Remove="Views\news_click.png" />
-    <None Remove="Views\on.png" />
-    <None Remove="Views\topup.png" />
-    <None Remove="Views\vk.png" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CliWrap" Version="3.3.2" />
@@ -69,6 +58,5 @@
 
   <ItemGroup>
     <Resource Include="Views\fon.png" />
-    <Resource Include="Views\on.png" />
   </ItemGroup>
 </Project>

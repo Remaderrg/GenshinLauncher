@@ -245,6 +245,9 @@
                 <ui:ToggleSwitch
                     Header="Borderless"
                     IsOn="{Binding Default.Borderless, Source={StaticResource Config}}"/>
+                <ui:ToggleSwitch
+                    Header="Borderless"
+                    IsOn="{Binding Default.Borderless, Source={StaticResource Config}}"/>
                 <GroupBox Header="Quality"
                           Margin="0">
                     <ComboBox 

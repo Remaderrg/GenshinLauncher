@@ -58,5 +58,20 @@ namespace GenshinLauncher {
                 this["Fullscreen"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Close
+        {
+            get
+            {
+                return ((bool)(this["Close"]));
+            }
+            set
+            {
+                this["Close"] = value;
+            }
+        }
     }
 }

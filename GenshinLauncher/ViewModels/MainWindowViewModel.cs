@@ -155,6 +155,9 @@ namespace GenshinLauncher.ViewModels
 
                     if (Quality.SelectedQuality != Models.Quality.Default)
                         args.Add("-screen-quality").Add(Quality.SelectedQuality);
+
+                    if (Config.Default.Close)
+                        System.Windows.Application.Current.Shutdown();
                 });
 
             try

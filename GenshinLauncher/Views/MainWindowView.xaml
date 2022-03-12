@@ -28,6 +28,7 @@
             <Setter Property="Minimum" Value="256" />
             <Setter Property="Maximum" Value="7680" />
         </Style>
+
     </Window.Resources>
 
 
@@ -76,7 +77,7 @@
                        FontFamily="Fonts/#Montserrat-Variable"
                        FontSize="17"/>
 
-            <TextBlock Text="2.5.0"
+            <TextBlock Text="2.5.1"
                        Foreground="#434343"
                        Grid.Column="1"
                        VerticalAlignment="Center"
@@ -243,35 +244,52 @@
                     Header="Fullscreen"
                     IsOn="{Binding Default.Fullscreen, Source={StaticResource Config}}"/>
                 <ui:ToggleSwitch
-                    Header="Borderless"
+                    Header="Borderless" 
                     IsOn="{Binding Default.Borderless, Source={StaticResource Config}}"/>
                 <ui:ToggleSwitch
                     Header="Сlose After Launch"
                     IsOn="{Binding Default.Close, Source={StaticResource Config}}"/>
-                <GroupBox Header="Quality"
-                          Margin="0">
-                    <ComboBox 
-                        ItemsSource="{Binding Quality.Qualities}"
-                        SelectedItem="{Binding Quality.SelectedQuality}" />
-                </GroupBox>
             </MenuItem>
             <MenuItem 
-                Header="Resolution" Background="#33000000">
+                Header="Graphics Settings" Background="#33000000">
                 <ui:SimpleStackPanel>
-                    <ui:NumberBox
-                        Header="Width" 
-                        Value="{Binding Resolution.Width}">
-                    </ui:NumberBox>
-                    <ui:NumberBox
-                        Header="Height" 
-                        Value="{Binding Resolution.Height}">
-                    </ui:NumberBox>
+                    <GroupBox 
+                        Header="Quality"
+                        Margin="0">
+                        <ComboBox
+                            ItemsSource="{Binding Quality.Qualities}"
+                            SelectedItem="{Binding Quality.SelectedQuality}" />
+                    </GroupBox>
                 </ui:SimpleStackPanel>
-                <ComboBox
+
+                <GroupBox
+                    Header="Preset">
+                    <ComboBox
                     Margin="0"
                     ItemsSource="{x:Static models:Resolution.Presets}"
                     SelectedItem="{Binding Resolution}"/>
-
+                </GroupBox>
+                <MenuItem
+                    Header="Manual input">
+                    <ui:SimpleStackPanel
+                        Margin="0">
+                        <TextBlock>
+                        <Run 
+                            Foreground="White" 
+                            Text="Resolution"
+                            FontSize="20">
+                        </Run>
+                        </TextBlock>
+                        <ui:NumberBox
+                        Header="Width" 
+                        Value="{Binding Resolution.Width}">
+                        </ui:NumberBox>
+                        <ui:NumberBox
+                        Header="Height" 
+                        Value="{Binding Resolution.Height}">
+                        </ui:NumberBox>
+                    </ui:SimpleStackPanel>
+                </MenuItem>
             </MenuItem>
 
         </Menu>

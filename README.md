@@ -2,7 +2,6 @@
 
 A Genshin Impact launcher  made using C# and WPF using Windows Fluent design.
 
-
 ## **[Download latest version](https://github.com/remaderrg/GenshinLauncher/releases/latest)** 
 
 ![GenshinLauncher_2021-05-02_23-22-24](https://github.com/Remaderrg/GenshinLauncher/blob/main/GIL.png)

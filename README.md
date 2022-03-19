@@ -20,9 +20,6 @@ A Genshin Impact launcher  made using C# and WPF using Windows Fluent design.
 ### Controller Settings
 This launches the unity screen selector for more options such as changing the joystick bindings as well as some other redundant options.
 
-## Upcoming
-* Create a shortcut to auto-apply settings.
-
 ## About
 
 ### Can this get me banned?

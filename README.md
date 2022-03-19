@@ -8,7 +8,7 @@ A Genshin Impact launcher  made using C# and WPF using Windows Fluent design. If
 
 ## How to use
 
-1. [Download the program](https://github.com/sabihoshi/GenshinLauncher/releases/latest) and then run, no need for installation.
+1. [Download the program](https://github.com/remaderrg/GenshinLauncher/releases/latest) and then run, no need for installation.
 
 
 ## Features

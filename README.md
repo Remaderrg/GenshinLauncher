@@ -17,9 +17,6 @@ A Genshin Impact launcher  made using C# and WPF using Windows Fluent design.
 * Allow for borderless fullscreen gameplay.
 * Change the location of the .exe to a custom one.
 
-### Controller Settings
-This launches the unity screen selector for more options such as changing the joystick bindings as well as some other redundant options.
-
 ## About
 
 ### Can this get me banned?

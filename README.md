@@ -1,6 +1,6 @@
-# Genshin Impact Launcher [![GitHub release (latest by date)](https://img.shields.io/github/v/release/sabihoshi/GenshinLauncher)](https://github.com/sabihoshi/GenshinLauncher/releases/latest)
+# Genshin Impact Launcher [![GitHub release (latest by date)](https://img.shields.io/badge/Release-v2.5.1-blue)](https://github.com/sabihoshi/GenshinLauncher/releases/latest)
 
-A Genshin Impact launcher  made using C# and WPF using Windows Fluent design. If you enjoyed this project, consider [contributing](https://github.com/sabihoshi/GenshinLauncher#contributing) or 🌟 starring the repository. Thank you~
+A Genshin Impact launcher  made using C# and WPF using Windows Fluent design.
 
 ## **[Download latest version](https://github.com/remaderrg/GenshinLauncher/releases/latest)** ![GitHub all releases](https://github.com/Remaderrg/GenshinLauncher)
 

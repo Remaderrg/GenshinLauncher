@@ -1,10 +1,10 @@
-# Genshin Impact Launcher [![GitHub release (latest by date)](https://img.shields.io/github/v/release/sabihoshi/GenshinLauncher)](https://github.com/sabihoshi/GenshinLauncher/releases/latest)
+# Genshin Impact Launcher [![GitHub release (latest by date)](https://img.shields.io/badge/Release-v2.5.1-blue)](https://github.com/remaderrg/GenshinLauncher/releases/latest)
 
-A Genshin Impact launcher  made using C# and WPF using Windows Fluent design. If you enjoyed this project, consider [contributing](https://github.com/sabihoshi/GenshinLauncher#contributing) or 🌟 starring the repository. Thank you~
+A Genshin Impact launcher  made using C# and WPF using Windows Fluent design. Thank you~
 
-## **[Download latest version](https://github.com/sabihoshi/GenshinLauncher/releases/latest)** ![GitHub all releases](https://img.shields.io/github/downloads/sabihoshi/GenshinLauncher/total?style=social)
+## **[Download latest version](https://github.com/remaderrg/GenshinLauncher/releases/latest)** ![GitHub all releases]
 
-![GenshinLauncher_2021-05-02_23-22-24](https://user-images.githubusercontent.com/25006819/116818301-4887b300-ab9d-11eb-8308-86705bc15e2e.png)
+![GenshinLauncher_2021-05-02_23-22-24](https://github.com/Remaderrg/GenshinLauncher/blob/main/GIL.png)
 
 ## How to use
 
